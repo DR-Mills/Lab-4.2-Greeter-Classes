@@ -13,12 +13,13 @@ public class GreeterApp {
 		List<Greeter> classArrayList = new ArrayList<Greeter>();
 
 		printMenu();
-		int menuChoice = menuChoice();
+		int menuChoice = Validator.integerWithinRange("Please enter a number from the menu above: ", scnr, 1, 6);
+		;
 		scnr.nextLine();
-		
+
 		String userGreeting = Validator.stringLettersOnly("Enter a greeting: ", scnr);
 		String userName = Validator.stringLettersOnly("Enter your name: ", scnr);
-		
+
 		classArrayList.add(new Greeter(userGreeting));
 		classArrayList.add(new SimonGreeter(userGreeting));
 		classArrayList.add(new LoudGreeter(userGreeting));
@@ -27,7 +28,6 @@ public class GreeterApp {
 		greetUser(classArrayList, menuChoice, userName);
 	}
 
-	
 	private static void greetUser(List<Greeter> classArrayList, int greeterChoice, String userName) {
 		switch (greeterChoice) {
 		case 1:
@@ -60,13 +60,6 @@ public class GreeterApp {
 		}
 	}
 
-	
-	public static int menuChoice() {
-		int userChoice = Validator.validatedInt("Please enter a number from the menu above: ", scnr, 1, 6);
-		return userChoice;
-	}
-
-	
 	public static void printMenu() {
 //		The easy/efficient way.....
 		System.out.println("Welcome to the Greeter App. Our current greeter menu includes:");

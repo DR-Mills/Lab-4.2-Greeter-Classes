@@ -23,7 +23,7 @@ public class LoudGreeter extends Greeter {
 
 	@Override
 	public void additionalPrompt() {
-		int userVolume = Validator.validatedInt("How much volume would you like to add? (0-10) ", scnr, 0, 10); 
+		int userVolume = Validator.integerWithinRange("How much volume would you like to add? (0-10) ", scnr, 0, 10); 
 		for (int i=0; i < userVolume; i++) {
 			addVolume();
 		}

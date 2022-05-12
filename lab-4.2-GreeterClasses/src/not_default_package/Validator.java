@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Validator {
 
 	// validates whole integer within given range
-	public static int validatedInt(String promptMsg, Scanner scnr, int min, int max) {
+	public static int integerWithinRange(String promptMsg, Scanner scnr, int min, int max) {
 		int returnValue = 0;
 		boolean keepGoing = true;
 		System.out.print(promptMsg);
